@@ -17,11 +17,11 @@
                                 <div class="row">
                                     <div class="col-sm-6" >
                                         <label for="fieldfihudt" class="accessibility">First Name</label>
-                                        <input v-model="form_data.first_name" required class="margin_20 form-control" id="fieldfihudt" name="cm-f-fihudt" type="text" placeholder="First Name">
+                                        <input v-model="form_data.first_name" required class="margin_20 form-control" id="fieldzhtulk" name="cm-f-zhtulk" type="text" placeholder="First Name">
                                     </div>
                                     <div class="col-sm-6" >
-                                        <label for="fieldfihudi" class="accessibility">Last Name</label>
-                                        <input v-model="form_data.last_name" required class="margin_20 form-control" id="fieldfihudi" name="cm-f-fihudi" type="text" placeholder="Last Name">
+                                        <label for="fieldzhtulk" class="accessibility">Last Name</label>
+                                        <input v-model="form_data.last_name" required class="margin_20 form-control" id="fieldfihudi" name="cm-f-zhtulk" type="text" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="row">
