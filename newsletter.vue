@@ -79,7 +79,7 @@
             watch : {
                 $route () {
                     this.form_data.first_name = this.$route.query.name;
-                    $("#fieldfihudt").val(this.form_data.first_name);
+                    $("#fieldzhtulk").val(this.form_data.first_name);
                     this.form_data.email = this.$route.query.email;
                     $("#newsletter_email").val(this.form_data.email);
                 }
@@ -109,7 +109,7 @@
                 loadData: async function () {
                     this.property.mm_host = this.property.mm_host.replace("http:", "");
                     try {
-                        let results = await Promise.all([this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/cerritos-newsletter.json"}), this.$store.dispatch("getData", "repos")]);
+                        let results = await Promise.all([this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "	/pages/eastwashington-newsletter.json"}), this.$store.dispatch("getData", "repos")]);
                         return results;
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
