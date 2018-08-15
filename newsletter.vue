@@ -72,7 +72,7 @@
             },
             mounted () {
                 this.form_data.first_name = this.$route.query.name;
-                $("#fieldfihudt").val(this.form_data.first_name);
+                $("#fieldzhtulk").val(this.form_data.first_name);
                 this.form_data.email = this.$route.query.email;
                 $("#newsletter_email").val(this.form_data.email);
             },
