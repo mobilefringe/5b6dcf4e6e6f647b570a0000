@@ -769,7 +769,7 @@ a {
     }
 }
 .animated_btn:hover {
-    color: #555;
+    // color: #555;
     text-decoration: none;
     &:before {
         -webkit-transform: scale3d(9, 9, 1);
