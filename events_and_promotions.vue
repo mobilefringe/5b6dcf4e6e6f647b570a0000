@@ -179,6 +179,7 @@
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
+                            console.log("promo", value)
                             console.log(value.store)
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
                                 value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
