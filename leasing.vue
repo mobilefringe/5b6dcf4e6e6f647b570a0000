@@ -73,15 +73,19 @@
                     if(temp_repo1) {
                         try {
                             this.leasingBooklet = temp_repo1.images[0].image_url;
-                        } catch(e) {
+                        } catch (e) {
                             
                         }
                     }
 
-                    // var temp_repo2 = this.findRepoByName('Leasing Images');
-                    // if(temp_repo2) {
-                    //     this.pageImages = temp_repo2.images;
-                    // }
+                    var temp_repo2 = this.findRepoByName('Leasing Images');
+                    if(temp_repo2) {
+                        try {
+                            this.pageImages = temp_repo2.images;
+                        } catch (e) {
+                            
+                        }
+                    }
 
                     // this.main = response[1].data;
                     // this.leasingInfo = response[1].data.subpages[0]
