@@ -376,8 +376,7 @@ a {
             font-weight: 700;
             font-size: 1rem;
             line-height: 1rem;
-            // color: $secondary;
-            color: #555;
+            color: #FFF;
             text-transform: uppercase;
             transition: all 0.3s ease;
             &:before {
