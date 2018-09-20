@@ -156,13 +156,24 @@
                                 month_heading = start_month;
                             }
 
-                            if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
-                                value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
+                            if (_.includes(value.event_image_url_abs, 'missing')) {
+                                if (value.store != null && value.store != undefined) {
+                                    if (_.includes(value.store.store_front_url_abs, 'missing')) {
+                                        value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
+                                    } else {
+                                        value.image_url = value.store.store_front_url_abs;
+                                    }
+                                } else {
+                                    value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
+                                }
                             }
+                            // if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
+                            //     value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
+                            // }
                             
-                            if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
-                            }
+                            // if (_.includes(value.image_url, 'missing')) {
+                            //     value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
+                            // }
                             
                             value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
