@@ -192,9 +192,6 @@
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
-                            // if (_.includes(value.image_url, 'missing')) {
-                            //     value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/png/1529532181000/promoplaceholder2@2x.png";
-                            // }
                             if (_.includes(value.promo_image_url_abs, 'missing')) {
                                 if (value.store != null && value.store != undefined) {
                                     if (_.includes(value.store.store_front_url_abs, 'missing')) {
