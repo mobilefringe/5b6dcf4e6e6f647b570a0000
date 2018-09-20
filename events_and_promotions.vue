@@ -146,6 +146,7 @@
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         var today_month = moment.tz(this.timezone).format("MM-YYYY");
                         if (today >= showOnWebDate) {
+                            console.log("event", value)
                             var start_month = moment.tz(value.start_date, this.timezone).format("MM-YYYY");
                             if (start_month <= today_month) {
                                 value.month = moment.tz(this.timezone).format("MMMM YYYY");
@@ -179,8 +180,6 @@
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
-                            console.log("promo", value)
-                            console.log(value.store)
                             if (_.includes(value.promo_image_url_abs, 'missing')) {
                                 if (value.store != null && value.store != undefined) {
                                     if (_.includes(value.store.store_front_url_abs, 'missing')) {
