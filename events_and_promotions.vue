@@ -193,10 +193,6 @@
                                 }
                             }
                             
-                            if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
-                            }
-                            
                             value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
                             showPromos.push(value);
