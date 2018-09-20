@@ -87,8 +87,8 @@
                         }
                     }
 
-                    // this.main = response[1].data;
-                    // this.leasingInfo = response[1].data.subpages[0]
+                    this.main = response[1].data;
+                    this.leasingInfo = response[1].data.subpages[0];
                     this.dataLoaded = true;
                 });
             },
