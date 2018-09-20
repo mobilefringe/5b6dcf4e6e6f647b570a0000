@@ -1246,8 +1246,9 @@ $anim-speed: 0.3s;
         margin: 7px 0;
         transition: all 0.3s ease;
         &:hover {
-            font-weight: 500;
+            cursor: pointer;
             color: $primary;
+            text-decoration: underline;
         }
     }
 }
