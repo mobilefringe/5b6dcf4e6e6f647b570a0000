@@ -32,8 +32,8 @@
                 <messages-component></messages-component>
                 <div class="main_container">
                     <h2 v-if="featuredItems.length > 0" class="home_title center">Events & Promotions</h2>
-                    <div class="row margin_40 home_events">
-                        <div class="col-sm-4" v-if="featuredItems" v-for="item in featuredItems">
+                    <div v-if="featuredItems" class="row margin_40 home_events">
+                        <div class="col-sm-4" v-for="item in featuredItems">
                     	    <div v-if="item.eventable_type" class="feature_item_container">
                     	        <router-link class="tile" :to="{ name: 'eventDetails', params: { id: item.slug }}">
                         			<img :src="item.image_url" :alt="'Event: ' + item.name">
