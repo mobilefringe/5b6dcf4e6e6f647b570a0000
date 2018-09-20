@@ -209,16 +209,17 @@
                         this.handleButton();
                     }
                     
-                    if(this.toggleEvents) { 
-                        this.toggleEvents = false
+                    var selected = item;
+                    if (_.includes(item, 'events')) {
+                        if(!this.toggleEvents) { 
+                            this.toggleEvents = true
+                            this.togglePromos = false;
+                        }   
                     } else {
-                        this.toggleEvents = true
-                    }
-                    
-                    if(this.togglePromos) {
-                        this.togglePromos = false
-                    } else {
-                        this.togglePromos = true
+                        if(!this.togglePromos) {
+                            this.togglePromos = true;
+                            this.toggleEvents = false;
+                        }    
                     }
                 },
                 isMultiDay(promo) {
