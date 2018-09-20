@@ -183,7 +183,7 @@
                             console.log(value.store)
                             if (_.includes(value.promo_image_url_abs, 'missing')) {
                                 if (value.store != null && value.store != undefined && _.includes(value.store.store_front_url_abs, 'missing')) {
-                                    value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
+                                    value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
                                 } else {
                                     value.image_url = value.store.store_front_url_abs;
                                 }
