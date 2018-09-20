@@ -381,9 +381,6 @@ a {
             &:before {
                 background: #555;
             }
-            // &:hover {
-            //     color: $secondary;
-            // }
         }
     }
     .footer_content {
@@ -396,6 +393,10 @@ a {
         }
         .footer_links a {
             color: #FFF;
+            transition: all 0.3s ease;
+            &:hover {
+                color: $primary;
+            }
         }
     }
     .copyright {
