@@ -297,13 +297,12 @@ a {
                 font-size: 0.75rem;
                 line-height: normal;
                 color: #FFF;
-                a:hover {
-                    color: inherit;
-                }
-            	&:hover, &:active, &:focus, &:visited {
-            	    background: $primary;
-            	    color: $secondary;
+                &:hover, &:active, &:focus, &:visited {
+            	    background: $secondary;
             	}
+            	a:hover {
+                    color: #FFF;
+                }
             }
         }
     }
