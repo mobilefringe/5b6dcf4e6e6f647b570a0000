@@ -777,7 +777,7 @@ a {
 }
 .change_color {
     background-color: $secondary;
-    color: #555;
+    // color: #555;
 }
 .list-item {
     display: inline-block;
