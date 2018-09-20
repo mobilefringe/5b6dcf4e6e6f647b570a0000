@@ -490,11 +490,10 @@ a {
             .banner_btn {
                 padding: 11px 30px;
                 display: inline-block;
-                // border: 1px solid $secondary;
                 background: $secondary;
                 font-size: 0.9rem;
                 font-weight: 700;
-                color: #555;    
+                color: #FFF;    
                 text-transform: uppercase;
                 transition: all 0.3s ease;
                 &:before {
