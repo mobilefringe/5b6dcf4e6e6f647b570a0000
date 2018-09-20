@@ -141,14 +141,14 @@
             },
             created(){
                 this.loadData().then(response => {
-                    var socialFeed = response[3].data;
-                    var social_feed = socialFeed.social.instagram;
-                    this.instaFeed = _.slice(social_feed, [0], [6]);
-                    this.instaFeed.map(insta => {
-                        if(insta.caption != null){
-                            insta.caption.text = _.truncate(insta.caption.text, { 'length': 60, 'separator': ' ' });
-                        }
-                    });
+                    // var socialFeed = response[3].data;
+                    // var social_feed = socialFeed.social.instagram;
+                    // this.instaFeed = _.slice(social_feed, [0], [6]);
+                    // this.instaFeed.map(insta => {
+                    //     if(insta.caption != null){
+                    //         insta.caption.text = _.truncate(insta.caption.text, { 'length': 60, 'separator': ' ' });
+                    //     }
+                    // });
                     
                     this.dataLoaded = true;  
                 });
