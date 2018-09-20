@@ -499,9 +499,6 @@ a {
                 &:before {
                     background: #555;
                 }
-                &:hover {
-                    color: $secondary;
-                }
             }
         }
     }
