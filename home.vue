@@ -192,9 +192,21 @@
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
-                            if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/png/1529532181000/promoplaceholder2@2x.png";
+                            // if (_.includes(value.image_url, 'missing')) {
+                            //     value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/png/1529532181000/promoplaceholder2@2x.png";
+                            // }
+                            if (_.includes(value.promo_image_url_abs, 'missing')) {
+                                if (value.store != null && value.store != undefined) {
+                                    if (_.includes(value.store.store_front_url_abs, 'missing')) {
+                                        value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463505000/ewp_promo-compressor.jpg";
+                                    } else {
+                                        value.image_url = value.store.store_front_url_abs;
+                                    }
+                                } else {
+                                    value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463505000/ewp_promo-compressor.jpg";
+                                }
                             }
+                            
                             // Sort Featured Promotions
                             if (value.is_featured) {
                                 featured_promotions.push(value);
@@ -219,7 +231,7 @@
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
                             if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/png/1529532187000/eventsplaceholder2@2x.png";
+                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463477000/ewp-events-compressor.jpg";
                             }
                             // Sort Featured Events
                             if (value.is_featured) {
