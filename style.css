@@ -1057,16 +1057,26 @@ $anim-speed: 0.3s;
     margin-bottom: 60px;
 }
 .event_link {
-    font-size: 0.875rem;
-    line-height: normal;
-    color: $primary;
-    transition: all 0.3s ease;
+    margin-top: 30px;
+    padding: 8px 2%;
+    min-width: 200px;
+    display: inline-block;
+    // display: inline-block;
+    // font-weight: 700;
+    // font-size: 0.875rem;
+    // line-height: normal;
+    // color: $primary;
+    // transition: all 0.3s ease;
     .fas {
         font-size: 0.75rem;
     }
-    &:hover {
-        text-decoration: underline;
-    }
+    // &:hover {
+    //     text-decoration: underline;
+    // }
+}
+.event_seperator {
+    display: none;
+    border-top: 1px solid #555;
 }
 /* *** LEASING *** */
 .leasing_btn {
