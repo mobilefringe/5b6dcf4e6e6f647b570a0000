@@ -121,7 +121,25 @@
                         slidesToShow: 1,
                         speed: 1000,
                         nextArrow: '.next',
-                        prevArrow: '.prev'
+                        prevArrow: '.prev',
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    pauseOnFocus: false,
+                                    pauseOnHover: false,
+                                    swipe : false,
+                                    waitForAnimate : false
+                                },
+                                breakpoint: 480,
+                                settings: {
+                                    pauseOnFocus: false,
+                                    pauseOnHover: false,
+                                    swipe : false,
+                                    waitForAnimate : false
+                                }
+                            }
+                        ]
                     },
                     instaOptions: {
                         arrows: true,
