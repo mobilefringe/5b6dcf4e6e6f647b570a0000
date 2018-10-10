@@ -2297,6 +2297,9 @@ $anim-speed: 0.3s;
         .event_img {
             margin-bottom: 30px;
         }
+        .event_seperator {
+            display: block;
+        }
     }
     .event_load_more {
         margin: 0 auto;
