@@ -1293,7 +1293,6 @@ $anim-speed: 0.3s;
     color: $secondary !important;
     transition: all 0.3s ease;
     &:hover {
-        color: #FFF !important;
         text-decoration: underline;
     }
 }
