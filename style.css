@@ -1278,17 +1278,11 @@ $anim-speed: 0.3s;
     left: 10px;
     border: 1px solid #ebebeb;
 } 
-.mapplic-tooltip {
-    background-color: $primary;
-}
-.mapplic-tooltip-triangle {
-    border-color: $primary transparent transparent transparent;
-}
 .mapplic-tooltip-title {
     font-size: 1.25rem;
     font-weight: normal;
     line-height: 1.75rem;
-    color: #FFF !important;
+    color: $primary !important;
 }
 .mapplic-popup-link {
     padding: 6px 6px 3px 6px;
