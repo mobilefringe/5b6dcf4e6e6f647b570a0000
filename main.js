@@ -140,11 +140,11 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                         url: "https://www.facebook.com/EastWashingtonPlace",
                         iconClass: "fab fa-facebook"
                     },
-                    // {
-                    //     name: "Instagram",
-                    //     url: "https://www.instagram.com",
-                    //     iconClass: "fab fa-instagram"
-                    // }
+                    {
+                        name: "Instagram",
+                        url: "https://www.instagram.com/eastwashingtonplace/",
+                        iconClass: "fab fa-instagram"
+                    }
                 ],
             }
         },
