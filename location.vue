@@ -102,7 +102,7 @@
                 },
                 propertyAddress() {
                     var address = this.property.name + "+" + this.property.address1 + "+" + this.property.city + "+" + this.property.province_state + "+" + this.property.country + this.property.postal_code
-                    var src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.6936910795293!2d-118.06205388490696!3d33.87178413466586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2cfec51ae52d%3A0xebd219556ff48672!2s" + address + "!5e0!3m2!1sen!2sca!4v1547494070137"
+                    var src = "https://www.google.com/maps/embed?" + address + "
                     return src
                 }
             }
