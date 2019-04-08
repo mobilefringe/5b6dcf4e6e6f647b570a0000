@@ -35,7 +35,7 @@ require.config({
         'vue-lazy-load': 'https://unpkg.com/vue-lazyload/vue-lazyload',
         'vee-validate' : 'https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate',
         'vue-select': 'https://cdn.jsdelivr.net/npm/vue-select@2.3.0/dist/vue-select.min',
-        'bootstrap-vue' : 'https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue',
+        // 'bootstrap-vue' : 'https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue',
         'masonry' : 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min',
         'vue-masonry-plugin' : 'https://cdn.jsdelivr.net/npm/vue-masonry@0.10.16/dist/vue-masonry-plugin',
         // 'vue-masonry-plugin' : "https://codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/application/javascript/1529435130000/masonrymod",
