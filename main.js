@@ -6,7 +6,7 @@ require.config({
         'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
         'lodash': 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min',
         'moment': 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min',
-        'moment-timezone': 'https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.min',
+        'moment-timezone': 'https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data-2012-2022.min',
         'vue-moment': 'https://mmvue.codecloudapp.com/vue-moment',
         'vue2-filters': 'https://cdn.jsdelivr.net/vue2-filters/0.1.8/vue2-filters.min',
         'vue': 'https://mmvue.codecloudapp.com/require-vuejs.min',
