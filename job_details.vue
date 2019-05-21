@@ -27,9 +27,7 @@
                                 <div class="event_desc event_details" v-html="currentJob.rich_description"></div>
                             </div>
                             <div class="col-md-4">
-                                <a :href="currentJob.image_url" :data-lightbox="currentJob.name">
-                                    <img :src="currentJob.image_url" :alt="'Promotion: ' + currentJob.name" class="margin_20 img_max"/>    
-                                </a>
+                                <img :src="currentJob.image_url" alt="" class="margin_20 img_max"/>    
                             </div>
                         </div>
                         <div class="row">
