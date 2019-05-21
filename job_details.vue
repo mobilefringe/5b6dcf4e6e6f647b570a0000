@@ -118,13 +118,18 @@
                 currentJob : function (){
                     if (this.currentJob != null) {
                         if (this.currentJob != null && this.currentJob != undefined) {
-                            if (_.includes(this.currentJob.store.store_front_alt_url_abs, 'missing')) {
-                                this.currentJob.no_store_logo = true;
+                            if (!_.isEmpty(this.currentJob.store)) {
+                                if (_.includes(this.currentJob.store.store_front_url_abs, 'missing')) {
+                                    this.currentJob.no_store_logo = true;
+                                } else {
+                                    this.currentJob.no_store_logo = false;
+                                }
                             } else {
-                                this.currentJob.no_store_logo = false;
+                                value.store = {};
+                                value.store.store_front_url_abs =  this.siteInfo.siteLogo;
                             }
-                        
-                            this.currentJob.store.store_front_url_abs = this.property.default_logo_url;
+                            
+                            // this.currentJob.store.store_front_url_abs = this.property.default_logo_url;
                         } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
                             this.currentJob.store = {};
                             this.currentJob.store.store_front_url_abs =  this.property.default_logo_url;
