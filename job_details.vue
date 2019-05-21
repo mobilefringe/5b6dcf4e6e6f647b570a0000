@@ -67,7 +67,7 @@
     define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "lightbox", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, Lightbox, VueLazyload, SocialSharing, site) {
         Vue.use(VueLazyload);
         Vue.component('social-sharing', SocialSharing);
-        return Vue.component("promo-details-component", {
+        return Vue.component("job-details-component", {
             template: template, // the variable template will be injected,
             props: ['id'],
             data: function() {
