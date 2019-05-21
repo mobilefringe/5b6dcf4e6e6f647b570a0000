@@ -1112,6 +1112,7 @@ $anim-speed: 0.3s;
     .event_desc {
         p, span, li {
             font-family: inherit !important;
+            font-size: inherit !important;
             color: inherit !important;
         }
     }
