@@ -14,8 +14,8 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-    				<div v-if="jobs.length >= 1" v-for="item in jobs" :key="item.id">
-                        <div class="row event_container">
+    				<div v-if="jobs.length >= 1" >
+                        <div class="row event_container" v-for="item in jobs" :key="item.id">
                             <div class="col-md-4">
                                 <div class="store_logo_container">
                                     <div v-if="!item.no_store_logo">
