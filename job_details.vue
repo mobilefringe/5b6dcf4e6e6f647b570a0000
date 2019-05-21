@@ -93,9 +93,9 @@
 				});
 				
 				this.$store.dispatch("getData", "promotions").then(response => {
-					this.currentJob = this.findPromoBySlug(this.id);
+					this.currentJob = this.findJobBySlug(this.id);
 					if (this.currentJob === null || this.currentJob === undefined) {
-						this.$router.replace({ path: '/events-and-promotions' });
+						this.$router.replace({ path: '/jobs' });
 					}
 					this.$breadcrumbs[0].path = "/events-and-promotions"
 					this.$breadcrumbs[1].meta.breadcrumb = this.currentJob.name
@@ -106,7 +106,7 @@
 			},
 			watch: {
                 currentJob : function (){
-                    if(this.currentJob != null) {
+                    if (this.currentJob != null) {
                         if (this.currentJob.promotionable_type === "Store"){
                             if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
                                 this.currentJob.image_url = this.currentJob.store.store_front_url_abs; 
@@ -124,7 +124,7 @@
                     'property',
                     'timezone',
                     'findRepoByName',
-                    'findPromoBySlug'
+                    'findJobBySlug'
                 ])
             },
             methods: {
