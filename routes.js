@@ -33,12 +33,13 @@ define([], function () {
                 {
                     path: '/jobs',
                     component: view('default'),
-                    children: [{
+                    meta: {
+                        breadcrumb: 'Jobs'
+                    },
+                    children: [
+                        {
                             path: '',
                             component: view('jobs'),
-                            meta: {
-                                breadcrumb: 'Jobs'
-                            },
                             name: 'jobList'
                         },
                         {
