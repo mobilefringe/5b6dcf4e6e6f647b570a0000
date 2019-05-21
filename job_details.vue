@@ -91,12 +91,12 @@
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
 				});
 				
-				this.$store.dispatch("getData", "promotions").then(response => {
+				this.$store.dispatch("getData", "jobs").then(response => {
 					this.currentJob = this.findJobBySlug(this.id);
 				// 	if (this.currentJob === null || this.currentJob === undefined) {
 				// 		this.$router.replace({ path: '/jobs' });
 				// 	}
-					this.$breadcrumbs[0].path = "/events-and-promotions"
+					this.$breadcrumbs[0].path = "/jobs"
 				// 	this.$breadcrumbs[1].meta.breadcrumb = this.currentJob.name
 					this.dataLoaded = true;
 				}, error => {
