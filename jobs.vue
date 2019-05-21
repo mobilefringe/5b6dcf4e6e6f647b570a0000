@@ -17,7 +17,7 @@
     				<div v-if="jobs.length >= 1" v-for="item in jobs" :key="item.id">
                         <div class="row event_container">
                             <div class="col-md-4">
-                                <div v-if="!store.no_store_logo">
+                                <div v-if="!item.no_store_logo">
                     			    <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
                     			    <img  class="store_img" :src="item.store_front_url_abs" :alt="item.name + 'Logo'">
                     			</div>
