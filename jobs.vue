@@ -82,12 +82,8 @@
                         today = moment().tz(vm.timezone);
                         webDate = moment(value.show_on_web_date).tz(vm.timezone);
                         if (today >= webDate) {
-                            value.description_short = _.truncate(value.description, {
-                                'length': 150
-                            });
-                            value.description_short_2 = _.truncate(value.description_2, {
-                                'length': 150
-                            });
+                            value.description_short = _.truncate(value.description, { 'length': 250 });
+
                             if (value.store != null && value.store != undefined && _.includes(value.store.store_front_url_abs, 'missing')) {
                                 value.store.store_front_url_abs = vm.property.default_logo_url;
                             }
