@@ -2,6 +2,20 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto+Condensed:400,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+	$padding: unquote( ( $y / $x) * 100 + '%');
+	@if $pseudo {
+		&:before {
+			@include pseudo($pos: relative);
+			width: 100%;
+			padding-top: $padding;
+		}
+	}
+	@else {
+		padding-top: $padding;
+	}
+}
+
 /* *** COLOURS *** */
 // $primary: #329c9c;
 $primary: #313771;
@@ -1081,6 +1095,10 @@ $anim-speed: 0.3s;
 
 /* *** JOBS *** */
 .jobs.store_logo_container {
+    @include responsive-ratio(1, 1);
+    .no_logo_container {
+        height: inherit;
+    }
     
 }
 /* *** LEASING *** */
