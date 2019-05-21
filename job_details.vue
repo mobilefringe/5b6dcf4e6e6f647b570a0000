@@ -106,8 +106,10 @@
 					if (this.currentJob === null || this.currentJob === undefined) {
 						this.$router.replace({ path: '/jobs' });
 					} else {
+					    
     					this.$breadcrumbs[0].path = "/jobs"
     				// 	this.$breadcrumbs[1].meta.breadcrumb = this.currentJob.name
+    				console.log("crumb", this.$breadcrumbs)
     					this.dataLoaded = true;
 					}
 				}, error => {
