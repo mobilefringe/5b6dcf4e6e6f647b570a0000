@@ -71,15 +71,16 @@
             props:['locale'],
             data: function() {
                 return {
+                    dataloaded: false,
                     selectedDate: null,
                     filteredPromos:[],
-                    dataloaded: false,
+                    
                     promoBanner: null,
                 }
             },
             created() {
                 this.loadData().then(response => {
-                    this.dataloaded = true;
+                    this.dataLoaded = true;
                     
                     var temp_repo = this.findRepoByName('Jobs Banner');
                     if(temp_repo) {
