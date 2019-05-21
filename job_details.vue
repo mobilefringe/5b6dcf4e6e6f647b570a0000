@@ -104,15 +104,28 @@
 			watch: {
                 currentJob : function (){
                     if (this.currentJob != null) {
-                        if (this.currentJob.promotionable_type === "Store"){
-                            if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
-                                this.currentJob.image_url = this.currentJob.store.store_front_url_abs; 
+                        if (value.store != null && value.store != undefined) {
+                            if (_.includes(value.store.store_front_alt_url_abs, 'missing')) {
+                                value.no_store_logo = true;
+                            } else {
+                                value.no_store_logo = false;
                             }
-                        } else {
-                            if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
-                                this.currentJob.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463505000/ewp_promo-compressor.jpg";    
-                            }
+                        
+                            value.store.store_front_url_abs = vm.property.default_logo_url;
+                        } else if (value.store == null || value.store == undefined) {
+                            value.store = {};
+                            value.store.store_front_url_abs =  vm.property.default_logo_url;
                         }
+                            
+                        // if (this.currentJob.promotionable_type === "Store"){
+                        //     if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
+                        //         this.currentJob.image_url = this.currentJob.store.store_front_url_abs; 
+                        //     }
+                        // } else {
+                        //     if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
+                        //         this.currentJob.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463505000/ewp_promo-compressor.jpg";    
+                        //     }
+                        // }
                     }
                 }
             },
