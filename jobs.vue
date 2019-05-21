@@ -14,51 +14,29 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-    				<div class="row event_container" v-for="(item, index) in jobs" :class="{ 'last': index === (jobs.length - 1) }">
-    					<div class="col-sm-6 col-md-4 event_image_container">
-    						<!--<router-link :to="'/jobs/'+ item.slug" class="event_learn_more">-->
-    							<img :src="item.store.store_front_url_abs"  class="event_image image" :alt="'Click here to view ' + item.name"/>
-    						<!--</router-link>-->
-    					</div>
-    					<div class="col-sm-6 col-md-8 event_dets_container">
-    						<h4 class="event_name caps"  v-if="locale=='en-ca'">{{item.name}}</h4>
-    						<h4 class="event_name caps"  v-else>{{item.name_2}}</h4>
-    						<div v-if="item.jobable_type == 'Store'">
-    						    <h4 class="event_store_name caps" v-if="locale=='en-ca'">{{item.store.name}}</h4>
-    						    <h4 class="event_store_name caps" v-else>{{item.store.name_2}}</h4>
-    						</div>
-    						<div class="event_thick_line"></div>
-    						<p class="event_dates">{{item.start_date | moment("MMM D", timezone)}} - {{item.end_date | moment("MMM D", timezone)}}</p>
-    						<p class="event_desc"  v-if="locale=='en-ca'">{{item.description_short}}</p>
-    						<p class="event_desc"  v-else>{{item.description_short_2}}</p>
-    						<div class="text-right  col-sm-6" v-if="item" style="padding:0">
-    							<router-link :to="'/jobs/'+ item.slug" class="event_learn_more pull-left"  :aria="item.name">
-    								{{$t("jobs_page.read_more")}} <i class="fa fa-angle-right" aria-hidden="true"></i>
-    							</router-link>
-    							<social-sharing :url="shareURL(item.slug)" :title="item.name" :description="item.description" :quote="_.truncate(item.description, {'length': 99})" twitter-user="BCCstyle" :media="item.image_url" inline-template >
-    								<div class="blog-social-share pull_right">
-    									<div class="social_share">
-    										<network network="facebook">
-    											<i class="fa fa-facebook social_icons" aria-hidden="true"></i>
-    										</network>
-    										<network network="twitter">
-    											<i class="fa fa-twitter social_icons" aria-hidden="true"></i>
-    										</network>
-    									</div>
-    								</div>
-    							</social-sharing>
-    						</div>
-    					</div>
-    					<div class="col-sm-12">
-    						<hr>
-    					</div>
-    				</div>
-    			</div>
-    			<div id="no_events" class="row" >
-    				<div class="col-md-12">
-    					<p>{{$t("jobs_page.no_job_message")}}</p>
-    				</div>
-    			</div>
+    				<div v-if="promos.length >= 1" v-for="item in promos" :key="item.id">
+                        <div class="row event_container">
+                            <div class="col-sm-6 col-md-4">
+                                <img :src="item.image_url" :alt="'Promotion: ' + item.name" class="event_img img_max" />   
+                            </div>
+                            <div class="col-sm-6 col-md-8">
+                                <p v-if="item.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
+                                <p v-else class="event_store_name">
+                                    <router-link :to="{ name: 'storeDetails', params: { id: item.store.slug }}">
+                                        {{ item.store.name }}
+                                    </router-link>        
+                                </p>
+                                <h4 class="event_name">{{ item.name }}</h4>
+                                <p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} - {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
+                                <div class="event_desc" v-html="item.description_short"></div>
+                                <router-link :to="{ name: 'promotionDetails', params: { id: item.slug, banner: pageBanner }}">
+                                    <div class="animated_btn event_link">View Promotion Details <i class="fas fa-angle-double-right"></i></div>
+                                </router-link>
+                                <hr class="event_seperator">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 		    </div>
 		</transition>
 	</div>
