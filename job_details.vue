@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div v-if="currentJob">
-                        <div class="row">
+                        <div class="row job_details">
                             <div class="col-md-8">
                                 <p v-if="currentJob.jobable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
                                 <p v-else class="event_store_name">{{ currentJob.store.name }}</p>
