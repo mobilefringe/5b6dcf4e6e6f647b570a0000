@@ -54,7 +54,7 @@
     					</div>
     				</div>
     			</div>
-    			<div id="no_events" class="row" v-else>
+    			<div id="no_events" class="row" >
     				<div class="col-md-12">
     					<p>{{$t("jobs_page.no_job_message")}}</p>
     				</div>
