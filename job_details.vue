@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header" v-if="pageBanner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + pageBanner.image_url + ') center center' }">
                     <div class="main_container position_relative">
-                        <h2>Events & Promotions</h2>
+                        <h2>Jobs</h2>
                     </div>
                 </div>
                 <div class="main_container">
@@ -64,8 +64,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "lightbox", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, Lightbox, VueLazyload, SocialSharing, site) {
-        Vue.use(VueLazyload);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, SocialSharing, site) {
         Vue.component('social-sharing', SocialSharing);
         return Vue.component("job-details-component", {
             template: template, // the variable template will be injected,
@@ -80,7 +79,7 @@
             },
             created() {
                 this.$store.dispatch("getData", "repos").then(response => {
-			        var temp_repo = this.findRepoByName('Events Banner').images;
+			        var temp_repo = this.findRepoByName('Jobs Banner').images;
                     if(temp_repo != null) {
                         this.pageBanner = temp_repo[0];
                     } else {
