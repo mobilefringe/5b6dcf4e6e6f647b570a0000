@@ -75,18 +75,21 @@
                     selectedDate: null,
                     filteredPromos:[],
                     
-                    promoBanner: null,
+                    pageBanner: null,
                 }
             },
             created() {
                 this.loadData().then(response => {
                     this.dataLoaded = true;
                     
-                    var temp_repo = this.findRepoByName('Jobs Banner');
-                    if(temp_repo) {
-                        this.promoBanner = temp_repo.images[0];
+                    var temp_repo = this.findRepoByName('Jobs Banner').images;
+                    if(temp_repo != null) {
+                        this.pageBanner = temp_repo[0];
+                    } else {
+                        this.pageBanner = {
+                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1529532304000/insidebanner2.jpg"
+                        }
                     }
-
                 });
             },
             computed: {
