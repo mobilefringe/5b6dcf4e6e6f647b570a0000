@@ -14,7 +14,7 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-    				<div v-if="promos.length >= 1" v-for="item in promos" :key="item.id">
+    				<div v-if="jobs.length >= 1" v-for="item in jobs" :key="item.id">
                         <div class="row event_container">
                             <div class="col-sm-6 col-md-4">
                                 <img :src="item.image_url" :alt="'Promotion: ' + item.name" class="event_img img_max" />   
@@ -44,15 +44,12 @@
 
 <script>
     define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment"], function(Vue, Vuex, moment, tz, VueMoment) {
-        return Vue.component("promos-component", {
+        return Vue.component("jobs-component", {
             template: template, // the variable template will be injected
             props:['locale'],
             data: function() {
                 return {
                     dataLoaded: false,
-                    selectedDate: null,
-                    filteredPromos:[],
-                    
                     pageBanner: null,
                 }
             },
