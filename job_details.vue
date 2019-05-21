@@ -87,7 +87,7 @@
                     siteInfo: site
                 }
             },
-            created() {
+            mounted() {
                 this.$store.dispatch("getData", "repos").then(response => {
 			        var temp_repo = this.findRepoByName('Jobs Banner').images;
                     if(temp_repo != null) {
