@@ -1,63 +1,66 @@
 <template>
-	<div v-if="dataloaded">
-		<!--<div class="page_header" v-if="promoBanner" v-bind:style="{ backgroundImage: 'url(' + promoBanner.image_url + ')' }">-->
-		<!--	<div class="site_container">-->
-		<!--		<div class="header_content cap">-->
-		<!--			<h1>{{$t("jobs_page.jobs")}}</h1>-->
-		<!--			<h2 style="display:none;">Scroll to  view jobs</h2>-->
-		<!--			<h3 style="display:none;">View all jobs below</h3>-->
-		<!--		</div>-->
-		<!--	</div>-->
-		<!--</div>-->
-		<div class="site_container page_content">
-			<div id="events_container" v-if="promotions.length > 0">
-				
-				<div class="row event_container" v-for="(item, index) in jobs" :class="{ 'last': index === (jobs.length - 1) }">
-					<div class="col-sm-6 col-md-4 event_image_container">
-						<!--<router-link :to="'/jobs/'+ item.slug" class="event_learn_more">-->
-							<img :src="item.store.store_front_url_abs"  class="event_image image" :alt="'Click here to view ' + item.name"/>
-						<!--</router-link>-->
-					</div>
-					<div class="col-sm-6 col-md-8 event_dets_container">
-						<h4 class="event_name caps"  v-if="locale=='en-ca'">{{item.name}}</h4>
-						<h4 class="event_name caps"  v-else>{{item.name_2}}</h4>
-						<div v-if="item.jobable_type == 'Store'">
-						    <h4 class="event_store_name caps" v-if="locale=='en-ca'">{{item.store.name}}</h4>
-						    <h4 class="event_store_name caps" v-else>{{item.store.name_2}}</h4>
-						</div>
-						<div class="event_thick_line"></div>
-						<p class="event_dates">{{item.start_date | moment("MMM D", timezone)}} - {{item.end_date | moment("MMM D", timezone)}}</p>
-						<p class="event_desc"  v-if="locale=='en-ca'">{{item.description_short}}</p>
-						<p class="event_desc"  v-else>{{item.description_short_2}}</p>
-						<div class="text-right  col-sm-6" v-if="item" style="padding:0">
-							<router-link :to="'/jobs/'+ item.slug" class="event_learn_more pull-left"  :aria="item.name">
-								{{$t("jobs_page.read_more")}} <i class="fa fa-angle-right" aria-hidden="true"></i>
-							</router-link>
-							<social-sharing :url="shareURL(item.slug)" :title="item.name" :description="item.description" :quote="_.truncate(item.description, {'length': 99})" twitter-user="BCCstyle" :media="item.image_url" inline-template >
-								<div class="blog-social-share pull_right">
-									<div class="social_share">
-										<network network="facebook">
-											<i class="fa fa-facebook social_icons" aria-hidden="true"></i>
-										</network>
-										<network network="twitter">
-											<i class="fa fa-twitter social_icons" aria-hidden="true"></i>
-										</network>
-									</div>
-								</div>
-							</social-sharing>
-						</div>
-					</div>
-					<div class="col-sm-12">
-						<hr>
-					</div>
-				</div>
-			</div>
-			<div id="no_events" class="row" v-else>
-				<div class="col-md-12">
-					<p>{{$t("jobs_page.no_job_message")}}</p>
-				</div>
-			</div>
-		</div>
+	<div> <!-- for some reason if you do not put an outer container div this component template will not render -->
+        <loading-spinner v-if="!dataLoaded"></loading-spinner>
+        <transition name="fade">
+            <div v-if="dataLoaded" v-cloak>
+                <div class="inside_page_header" v-if="pageBanner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + pageBanner.image_url + ') center center' }">
+                    <div class="main_container position_relative">
+                        <h2>Leasing</h2>
+                    </div>
+                </div>
+                <div class="main_container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <breadcrumb></breadcrumb>
+                        </div>
+                    </div>
+    				<div class="row event_container" v-for="(item, index) in jobs" :class="{ 'last': index === (jobs.length - 1) }">
+    					<div class="col-sm-6 col-md-4 event_image_container">
+    						<!--<router-link :to="'/jobs/'+ item.slug" class="event_learn_more">-->
+    							<img :src="item.store.store_front_url_abs"  class="event_image image" :alt="'Click here to view ' + item.name"/>
+    						<!--</router-link>-->
+    					</div>
+    					<div class="col-sm-6 col-md-8 event_dets_container">
+    						<h4 class="event_name caps"  v-if="locale=='en-ca'">{{item.name}}</h4>
+    						<h4 class="event_name caps"  v-else>{{item.name_2}}</h4>
+    						<div v-if="item.jobable_type == 'Store'">
+    						    <h4 class="event_store_name caps" v-if="locale=='en-ca'">{{item.store.name}}</h4>
+    						    <h4 class="event_store_name caps" v-else>{{item.store.name_2}}</h4>
+    						</div>
+    						<div class="event_thick_line"></div>
+    						<p class="event_dates">{{item.start_date | moment("MMM D", timezone)}} - {{item.end_date | moment("MMM D", timezone)}}</p>
+    						<p class="event_desc"  v-if="locale=='en-ca'">{{item.description_short}}</p>
+    						<p class="event_desc"  v-else>{{item.description_short_2}}</p>
+    						<div class="text-right  col-sm-6" v-if="item" style="padding:0">
+    							<router-link :to="'/jobs/'+ item.slug" class="event_learn_more pull-left"  :aria="item.name">
+    								{{$t("jobs_page.read_more")}} <i class="fa fa-angle-right" aria-hidden="true"></i>
+    							</router-link>
+    							<social-sharing :url="shareURL(item.slug)" :title="item.name" :description="item.description" :quote="_.truncate(item.description, {'length': 99})" twitter-user="BCCstyle" :media="item.image_url" inline-template >
+    								<div class="blog-social-share pull_right">
+    									<div class="social_share">
+    										<network network="facebook">
+    											<i class="fa fa-facebook social_icons" aria-hidden="true"></i>
+    										</network>
+    										<network network="twitter">
+    											<i class="fa fa-twitter social_icons" aria-hidden="true"></i>
+    										</network>
+    									</div>
+    								</div>
+    							</social-sharing>
+    						</div>
+    					</div>
+    					<div class="col-sm-12">
+    						<hr>
+    					</div>
+    				</div>
+    			</div>
+    			<div id="no_events" class="row" v-else>
+    				<div class="col-md-12">
+    					<p>{{$t("jobs_page.no_job_message")}}</p>
+    				</div>
+    			</div>
+		    </div>
+		</transition>
 	</div>
 </template>
 
