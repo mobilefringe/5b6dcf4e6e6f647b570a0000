@@ -128,22 +128,7 @@
                                 this.currentJob.store = {};
                                 this.currentJob.store.store_front_url_abs =  this.siteInfo.siteLogo;
                             }
-                            
-                            // this.currentJob.store.store_front_url_abs = this.property.default_logo_url;
-                        // } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
-                        //     this.currentJob.store = {};
-                        //     this.currentJob.store.store_front_url_abs =  this.property.default_logo_url;
                         }
-                            
-                        // if (this.currentJob.promotionable_type === "Store"){
-                        //     if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
-                        //         this.currentJob.image_url = this.currentJob.store.store_front_url_abs; 
-                        //     }
-                        // } else {
-                        //     if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
-                        //         this.currentJob.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463505000/ewp_promo-compressor.jpg";    
-                        //     }
-                        // }
                     }
                 }
             },
