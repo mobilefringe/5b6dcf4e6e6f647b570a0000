@@ -16,10 +16,20 @@
                     </div>
     				<div v-if="jobs.length >= 1" v-for="item in jobs" :key="item.id">
                         <div class="row event_container">
-                            <div class="col-sm-6 col-md-4">
-                                <img :src="item.image_url" :alt="'Promotion: ' + item.name" class="event_img img_max" />   
+                            <div class="col-md-4">
+                                <div v-if="!store.no_store_logo">
+                    			    <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
+                    			    <img  class="store_img" :src="item.store_front_url_abs" :alt="item.name + 'Logo'">
+                    			</div>
+                    			
+                                <div v-else class="no_logo_container">
+                                    <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
+                                    <div class="no_logo_text">
+                                        <div class="store_text"><h4>{{ item.name }}</h4></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-6 col-md-8">
+                            <div class="col-md-8">
                                 <p v-if="item.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
                                 <p v-else class="event_store_name">
                                     <router-link :to="{ name: 'storeDetails', params: { id: item.store.slug }}">
@@ -101,7 +111,6 @@
             methods: {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
                         let results = await Promise.all([
                             this.$store.dispatch("getData", "repos"),
                             this.$store.dispatch("getData", "jobs")
@@ -109,11 +118,7 @@
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
-                },
-                shareURL(slug){
-                    var share_url = "http://bramaleacitycentre.com/jobs/" + slug;
-                    return share_url;
-                },
+                }
             }
         });
     });
