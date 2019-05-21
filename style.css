@@ -1110,7 +1110,7 @@ $anim-speed: 0.3s;
 }
 .job_details {
     .event_desc {
-        p, p span {
+        p, span, li {
             font-family: inherit;
             color: inherit;
         }
