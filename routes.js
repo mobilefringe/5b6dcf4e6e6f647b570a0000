@@ -96,24 +96,6 @@ define([], function () {
                 }
             ]
         },
-        // {
-        //     path: '/events',
-        //     // component: view('default'),
-        //     meta: {
-        //         breadcrumb: 'Events & Promotions',
-        //     },
-        //     children: [
-        //         {
-        //             path: ':id',
-        //             component: view('event_details'),
-        //             meta: {
-        //                 breadcrumb: 'Event Details',
-        //             },
-        //             name: 'eventDetails',
-        //             props: true
-        //         }
-        //     ]
-        // },
         {
             path: '/events-and-promotions',
             component: view('default'),
@@ -147,22 +129,6 @@ define([], function () {
             ]
         },
         {
-            path: '/jobs',
-            component: view('default'),
-            children: [{
-                    path: '',
-                    component: view('jobs'),
-                    name: 'jobList'
-                },
-                {
-                    path: ':id',
-                    component: view('job_details'),
-                    name: 'jobDetails',
-                    props: true
-                }
-            ]
-        },
-        {
             path: '/location',
             component: view('default'),
             meta: {
@@ -191,24 +157,6 @@ define([], function () {
                 }
             ]
         },
-        // {
-        //     path: '/promotions',
-        //     component: view('default'),
-        //     meta: {
-        //         breadcrumb: 'Events & Promotions',
-        //     },
-        //     children: [
-        //         {
-        //             path: ':id',
-        //             component: view('promotion_details'),
-        //             meta: {
-        //                 breadcrumb: 'Promotion Details',
-        //             },
-        //             name: 'promotionDetails',
-        //             props: true
-        //         }
-        //     ]
-        // },
         {
             path: '/stores',
             component: view('default'),
