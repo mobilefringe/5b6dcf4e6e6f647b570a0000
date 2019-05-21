@@ -96,7 +96,7 @@
                             value.description_short = _.truncate(value.description, { 'length': 250 });
                             console.log("value", value)
                             if (value.store != null && value.store != undefined) {
-                                if (_.includes(value.image_url, 'missing')) {
+                                if (_.includes(value.store.store_front_alt_url_abs, 'missing')) {
                                     value.no_store_logo = true;
                                 } else {
                                     value.no_store_logo = false;
