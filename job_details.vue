@@ -14,21 +14,21 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div v-if="currentPromo">
+                    <div v-if="currentJob">
                         <div class="row">
                             <div class="col-md-8">
-                                <p v-if="currentPromo.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
-                                <p v-else class="event_store_name">{{ currentPromo.store.name }}</p>
-                                <h4 class="event_name">{{ currentPromo.name }}</h4>
+                                <p v-if="currentJob.jobable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
+                                <p v-else class="event_store_name">{{ currentJob.store.name }}</p>
+                                <h4 class="event_name">{{ currentJob.name }}</h4>
                                 <p class="event_dates">
-                                    <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} - {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
-                                    <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
+                                    <span v-if="isMultiDay(currentJob)">{{ currentJob.start_date | moment("MMMM D", timezone)}} - {{ currentJob.end_date | moment("MMMM D", timezone)}}</span>
+                                    <span v-else>{{ currentJob.start_date | moment("MMMM D", timezone)}}</span>
                                 </p>
-                                <div class="event_desc event_details" v-html="currentPromo.rich_description"></div>
+                                <div class="event_desc event_details" v-html="currentJob.rich_description"></div>
                             </div>
                             <div class="col-md-4">
-                                <a :href="currentPromo.image_url" :data-lightbox="currentPromo.name">
-                                    <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>    
+                                <a :href="currentJob.image_url" :data-lightbox="currentJob.name">
+                                    <img v-lazy="currentJob.image_url" :alt="'Promotion: ' + currentJob.name" class="margin_20 img_max"/>    
                                 </a>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                     		            </router-link>    
                                     </div>
                                 </div>
-                                <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.name" :description="currentPromo.description" :quote="truncate(currentPromo.description)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
+                                <social-sharing v-if="currentJob" :url="shareURL(currentJob.slug)" :title="currentJob.name" :description="currentJob.description" :quote="truncate(currentJob.description)" :twitter-user="siteInfo.twitterHandle" :media="currentJob.image_url" inline-template>
                                     <div class="social_share margin_60">
                                         <network network="facebook">
                                             <i class="fab fa-facebook"></i>
@@ -74,7 +74,7 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    currentPromo: null,
+                    currentJob: null,
                     siteInfo: site
                 }
             },
@@ -93,27 +93,27 @@
 				});
 				
 				this.$store.dispatch("getData", "promotions").then(response => {
-					this.currentPromo = this.findPromoBySlug(this.id);
-					if (this.currentPromo === null || this.currentPromo === undefined) {
+					this.currentJob = this.findPromoBySlug(this.id);
+					if (this.currentJob === null || this.currentJob === undefined) {
 						this.$router.replace({ path: '/events-and-promotions' });
 					}
 					this.$breadcrumbs[0].path = "/events-and-promotions"
-					this.$breadcrumbs[1].meta.breadcrumb = this.currentPromo.name
+					this.$breadcrumbs[1].meta.breadcrumb = this.currentJob.name
 					this.dataLoaded = true;
 				}, error => {
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
 				});
 			},
 			watch: {
-                currentPromo : function (){
-                    if(this.currentPromo != null) {
-                        if (this.currentPromo.promotionable_type === "Store"){
-                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
-                                this.currentPromo.image_url = this.currentPromo.store.store_front_url_abs; 
+                currentJob : function (){
+                    if(this.currentJob != null) {
+                        if (this.currentJob.promotionable_type === "Store"){
+                            if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
+                                this.currentJob.image_url = this.currentJob.store.store_front_url_abs; 
                             }
                         } else {
-                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
-                                this.currentPromo.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463505000/ewp_promo-compressor.jpg";    
+                            if  (_.includes(this.currentJob.promo_image_url_abs, 'missing')) {
+                                this.currentJob.image_url = "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1537463505000/ewp_promo-compressor.jpg";    
                             }
                         }
                     }
@@ -128,10 +128,10 @@
                 ])
             },
             methods: {
-				isMultiDay(currentPromo) {
+				isMultiDay(currentJob) {
 					var timezone = this.timezone
-					var start_date = moment(currentPromo.start_date).tz(timezone).format("MM-DD-YYYY")
-					var end_date = moment(currentPromo.end_date).tz(timezone).format("MM-DD-YYYY")
+					var start_date = moment(currentJob.start_date).tz(timezone).format("MM-DD-YYYY")
+					var end_date = moment(currentJob.end_date).tz(timezone).format("MM-DD-YYYY")
 					if (start_date === end_date) {
 						return false
 					} else {
