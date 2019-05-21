@@ -94,9 +94,9 @@
 				
 				this.$store.dispatch("getData", "promotions").then(response => {
 					this.currentJob = this.findJobBySlug(this.id);
-					if (this.currentJob === null || this.currentJob === undefined) {
-						this.$router.replace({ path: '/jobs' });
-					}
+				// 	if (this.currentJob === null || this.currentJob === undefined) {
+				// 		this.$router.replace({ path: '/jobs' });
+				// 	}
 					this.$breadcrumbs[0].path = "/events-and-promotions"
 				// 	this.$breadcrumbs[1].meta.breadcrumb = this.currentJob.name
 					this.dataLoaded = true;
