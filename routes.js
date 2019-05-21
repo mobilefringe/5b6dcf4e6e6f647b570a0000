@@ -36,11 +36,17 @@ define([], function () {
                     children: [{
                             path: '',
                             component: view('jobs'),
+                            meta: {
+                                breadcrumb: 'Jobs'
+                            },
                             name: 'jobList'
                         },
                         {
                             path: ':id',
                             component: view('job_details'),
+                            meta: {
+                                breadcrumb: 'Jobs'
+                            },
                             name: 'jobDetails',
                             props: true
                         }
