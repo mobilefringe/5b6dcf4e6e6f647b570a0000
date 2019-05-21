@@ -117,17 +117,17 @@
 			watch: {
                 currentJob : function (){
                     if (this.currentJob != null) {
-                        if (value.store != null && value.store != undefined) {
-                            if (_.includes(value.store.store_front_alt_url_abs, 'missing')) {
-                                value.no_store_logo = true;
+                        if (this.currentJob != null && this.currentJob != undefined) {
+                            if (_.includes(this.currentJob.store.store_front_alt_url_abs, 'missing')) {
+                                this.currentJob.no_store_logo = true;
                             } else {
-                                value.no_store_logo = false;
+                                this.currentJob.no_store_logo = false;
                             }
                         
-                            value.store.store_front_url_abs = vm.property.default_logo_url;
-                        } else if (value.store == null || value.store == undefined) {
-                            value.store = {};
-                            value.store.store_front_url_abs =  vm.property.default_logo_url;
+                            this.currentJob.store.store_front_url_abs = vm.property.default_logo_url;
+                        } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
+                            this.currentJob.store = {};
+                            this.currentJob.store.store_front_url_abs =  vm.property.default_logo_url;
                         }
                             
                         // if (this.currentJob.promotionable_type === "Store"){
