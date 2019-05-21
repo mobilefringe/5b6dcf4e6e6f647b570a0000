@@ -71,7 +71,7 @@
             props:['locale'],
             data: function() {
                 return {
-                    dataloaded: false,
+                    dataLoaded: false,
                     selectedDate: null,
                     filteredPromos:[],
                     
