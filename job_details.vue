@@ -125,8 +125,8 @@
                                     this.currentJob.no_store_logo = false;
                                 }
                             } else {
-                                value.store = {};
-                                value.store.store_front_url_abs =  this.siteInfo.siteLogo;
+                                this.currentJob.store = {};
+                                this.currentJob.store.store_front_url_abs =  this.siteInfo.siteLogo;
                             }
                             
                             // this.currentJob.store.store_front_url_abs = this.property.default_logo_url;
