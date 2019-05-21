@@ -98,7 +98,7 @@
 						this.$router.replace({ path: '/jobs' });
 					}
 					this.$breadcrumbs[0].path = "/events-and-promotions"
-					this.$breadcrumbs[1].meta.breadcrumb = this.currentJob.name
+				// 	this.$breadcrumbs[1].meta.breadcrumb = this.currentJob.name
 					this.dataLoaded = true;
 				}, error => {
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
