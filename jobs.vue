@@ -14,38 +14,37 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-    				<div v-if="jobs.length >= 1" >
-                        <div class="row event_container" v-for="item in jobs" :key="item.id">
-                            <div class="col-md-4">
-                                <div class="store_logo_container">
-                                    <div v-if="!item.no_store_logo">
-                        			    <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
-                        			    <img  class="store_img" :src="item.store_front_url_abs" :alt="item.name + 'Logo'">
-                        			</div>
-                        			
-                                    <div v-else class="no_logo_container">
-                                        <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
-                                        <div class="no_logo_text">
-                                            <div class="store_text"><h4>{{ item.name }}</h4></div>
-                                        </div>
+
+                    <div class="row event_container" v-if="jobs.length >= 1"  v-for="item in jobs" :key="item.id">
+                        <div class="col-md-4">
+                            <div class="store_logo_container">
+                                <div v-if="!item.no_store_logo">
+                    			    <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
+                    			    <img  class="store_img" :src="item.store_front_url_abs" :alt="item.name + 'Logo'">
+                    			</div>
+                    			
+                                <div v-else class="no_logo_container">
+                                    <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
+                                    <div class="no_logo_text">
+                                        <div class="store_text"><h4>{{ item.name }}</h4></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <p v-if="item.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
-                                <p v-else class="event_store_name">
-                                    <router-link :to="{ name: 'storeDetails', params: { id: item.store.slug }}">
-                                        {{ item.store.name }}
-                                    </router-link>        
-                                </p>
-                                <h4 class="event_name">{{ item.name }}</h4>
-                                <!--<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} - {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>-->
-                                <div class="event_desc" v-html="item.description_short"></div>
-                                <router-link :to="{ name: 'promotionDetails', params: { id: item.slug, banner: pageBanner }}">
-                                    <div class="animated_btn event_link">View Job Posting <i class="fas fa-angle-double-right"></i></div>
-                                </router-link>
-                                <hr class="event_seperator">
-                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <p v-if="item.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
+                            <p v-else class="event_store_name">
+                                <router-link :to="{ name: 'storeDetails', params: { id: item.store.slug }}">
+                                    {{ item.store.name }}
+                                </router-link>        
+                            </p>
+                            <h4 class="event_name">{{ item.name }}</h4>
+                            <!--<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} - {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>-->
+                            <div class="event_desc" v-html="item.description_short"></div>
+                            <router-link :to="{ name: 'promotionDetails', params: { id: item.slug, banner: pageBanner }}">
+                                <div class="animated_btn event_link">View Job Posting <i class="fas fa-angle-double-right"></i></div>
+                            </router-link>
+                            <hr class="event_seperator">
                         </div>
                     </div>
                 </div>
