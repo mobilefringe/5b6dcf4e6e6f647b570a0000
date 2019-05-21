@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-md-4">
                                 <a :href="currentJob.image_url" :data-lightbox="currentJob.name">
-                                    <img v-lazy="currentJob.image_url" :alt="'Promotion: ' + currentJob.name" class="margin_20 img_max"/>    
+                                    <img :src="currentJob.image_url" :alt="'Promotion: ' + currentJob.name" class="margin_20 img_max"/>    
                                 </a>
                             </div>
                         </div>
