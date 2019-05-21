@@ -94,7 +94,7 @@
                         webDate = moment(value.show_on_web_date).tz(vm.timezone);
                         if (today >= webDate) {
                             value.description_short = _.truncate(value.description, { 'length': 250 });
-                            
+                            console.log("value", value)
                             if (value.store != null && value.store != undefined) {
                                 if (_.includes(value.image_url, 'missing')) {
                                     value.no_store_logo = true;
