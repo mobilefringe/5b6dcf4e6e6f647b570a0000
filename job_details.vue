@@ -127,7 +127,7 @@
                             this.currentJob.store.store_front_url_abs = vm.property.default_logo_url;
                         } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
                             this.currentJob.store = {};
-                            this.currentJob.store.store_front_url_abs =  vm.property.default_logo_url;
+                            this.currentJob.store.store_front_url_abs =  this.property.default_logo_url;
                         }
                             
                         // if (this.currentJob.promotionable_type === "Store"){
