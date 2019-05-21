@@ -125,6 +125,22 @@ define([], function () {
             ]
         },
         {
+            path: '/jobs',
+            component: view('default'),
+            children: [{
+                    path: '',
+                    component: view('jobs'),
+                    name: 'jobList'
+                },
+                {
+                    path: ':id',
+                    component: view('job_details'),
+                    name: 'jobDetails',
+                    props: true
+                }
+            ]
+        },
+        {
             path: '/location',
             component: view('default'),
             meta: {
