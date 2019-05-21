@@ -1,14 +1,14 @@
 <template>
 	<div v-if="dataloaded">
-		<div class="page_header" v-if="promoBanner" v-bind:style="{ backgroundImage: 'url(' + promoBanner.image_url + ')' }">
-			<div class="site_container">
-				<div class="header_content cap">
-					<h1>{{$t("jobs_page.jobs")}}</h1>
-					<h2 style="display:none;">Scroll to  view jobs</h2>
-					<h3 style="display:none;">View all jobs below</h3>
-				</div>
-			</div>
-		</div>
+		<!--<div class="page_header" v-if="promoBanner" v-bind:style="{ backgroundImage: 'url(' + promoBanner.image_url + ')' }">-->
+		<!--	<div class="site_container">-->
+		<!--		<div class="header_content cap">-->
+		<!--			<h1>{{$t("jobs_page.jobs")}}</h1>-->
+		<!--			<h2 style="display:none;">Scroll to  view jobs</h2>-->
+		<!--			<h3 style="display:none;">View all jobs below</h3>-->
+		<!--		</div>-->
+		<!--	</div>-->
+		<!--</div>-->
 		<div class="site_container page_content">
 			<div id="events_container" v-if="promotions.length > 0">
 				
