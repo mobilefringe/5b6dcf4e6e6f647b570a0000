@@ -68,6 +68,20 @@ define([], function () {
                     ]
                 },
                 {
+                    path: '/specialty-leasing',
+                    component: view('default'),
+                    children: [
+                        {
+                            path: '',
+                            component: view('specialty_leasing'),
+                            meta: {
+                                breadcrumb: 'Specialty Leasing'
+                            },
+                            name: 'specialtyLeasing'
+                        }
+                    ]
+                },
+                {
                     path: '/newsletter',
                     component: view('default'),
                     children: [
