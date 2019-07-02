@@ -48,6 +48,7 @@ require.config({
         //google map dependcies
         'google-map-api': 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCukCjH3fsuDYBdI44hZKL43m60jEToJjY',
         'google_map': 'https://mmvue.codecloudapp.com/google_map.vue?noext',
+        'image_popup':'https://mmvue.codecloudapp.com/image_popup.vue?noext',
     }
 });
 
