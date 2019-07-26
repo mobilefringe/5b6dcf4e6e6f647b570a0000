@@ -1,9 +1,9 @@
 <template>
-    <div> <!-- without an outer container div this component template will not render -->
+<template>    <div> <!-- without an outer container div this component template will not render -->
         <loading-spinner v-if="!dataLoaded"></loading-spinner>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
-                <div class="inside_page_header" v-if="pageBanner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + pageBanner.image_url + ') center center' }">
+                <div class="inside_page_header" v-if="pageBanner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),  #753241 url(' + pageBanner.image_url + ') center center' }">
                     <div class="main_container position_relative">
                         <h2>Contest</h2>
                     </div>
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
+                        <div class="col-md-8 col-md-offset-2 text-center">
                             <img v-if="currentContest.image_url" class="img_max" :src="currentContest.image_url" :alt="currentContest.name">
                         </div>
                     </div> 
@@ -66,8 +66,8 @@
         						    </div>
         						    <div class="col-xs-12" :class="{'has-error': errors.has('agree_newsletter')}">
         						        <label class="checkbox">
-                                            <input name="agree_newsletter" required type="checkbox" v-model="form_data.newsletter">
-                                                I agree to receive newsletters from {{ property.name }}. (You can unsubscribe at anytime)
+                                            <input name="agree_newsletter" type="checkbox" v-model="form_data.newsletter">
+                                            I agree to receive newsletters from {{ property.name }}. (You can unsubscribe at anytime)
                                         </label>
         						    </div>
         						    <div class="col-xs-12">
@@ -106,21 +106,20 @@
                 }
             },
             created() {
-                this.$store.dispatch("getData", "repos").then(response => {
-                    var temp_repo = this.findRepoByName('Events Banner').images;
-                    if(temp_repo != null) {
-                        this.pageBanner = temp_repo[0];
+                this.loadData().then(response => {
+                    var temp_repo = this.findRepoByName('Contest Banner');
+                    if(temp_repo !== null && temp_repo !== undefined) {
+                       temp_repo = temp_repo.images;
+                       this.pageBanner = temp_repo[0];
                     } else {
                         this.pageBanner = {
-                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5b6dcf4e6e6f647b570a0000/image/jpeg/1529532304000/insidebanner2.jpg"
+                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5ca3d0086e6f64397a070000/image/png/1554995151000/plazapaseo_banner.png"
                         }
                     }
-                }, error => {
-                    console.error("Could not retrieve data from server. Please check internet connection and try again.");
-                }); 
+                });
                 
                 this.$store.dispatch("getData", "contests").then(response => {
-                    this.currentContest = this.findContestByShowOnSlug(''); // Add Contest URL
+                    this.currentContest = this.findContestByShowOnSlug('paseoreal-contest--2');
                     this.dataLoaded = true;
                 }, error => {
                     console.error("Could not retrieve data from server. Please check internet connection and try again.");
@@ -129,12 +128,11 @@
             watch : {
                 formSuccess() {
                     setTimeout(function(){
-                        console.log($("#send_contact_success"), $("#send_contact_success").offset());
-                        var position = $("#send_contact_success").offset().top - 250;
+                        var position = $("#send_contact_success").offset().top - 135;
                         $('html, body').animate({
                     		scrollTop: position
                     	}, 500, 'linear');
-                    }, 700)
+                    },700)
                 }
             },
             computed: {
@@ -147,13 +145,23 @@
                 ]),
             },
             methods: {
+                loadData: async function () {
+                    try {
+                        let results = await Promise.all([
+                            this.$store.dispatch("getData", "repos")
+                        ]);
+                    } catch (e) {
+                        console.log("Error loading data: " + e.message);
+                    }
+                },
                 validateBeforeSubmit() {
                     this.$validator.validateAll().then((result) => {
                         if (result) {
                             let errors = this.errors;
-                            //format contests data for MM
+                            // Format contests data for MM
                             var contest_entry = {};
                             contest_entry.contest = this.form_data;
+                            console.log( contest_entry.contest)
                             var vm = this;
                             host_name = this.property.mm_host.replace("http:", "");
                             var url = host_name + "/contests/" + this.currentContest.slug + "/create_js_entry";
@@ -174,4 +182,3 @@
             }
         });
     });
-</script>
