@@ -36,7 +36,7 @@
     						        <ul v-if="item.sub_menu">
     						            <li v-for="sub_menu in item.sub_menu" class="dropdown_item">
     						                <!--<router-link :to="sub_menu.href">{{ sub_menu.name }}</router-link>-->
-    						                <router-link v-else :to="sub_menu.href">
+    						                <router-link :to="sub_menu.href">
 						                        <p>{{ sub_menu.name }}</p>
 					                        </router-link>
     						            </li>
