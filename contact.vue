@@ -19,7 +19,7 @@
                             <div v-if="main" class="margin_60" v-html="main.body"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="contact_us_container">
                         <div class="col-md-4">
                             <div v-if="contactInfo" class="margin_60 padding_60" v-html="contactInfo.body"></div>    
                         </div>
