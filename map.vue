@@ -107,7 +107,7 @@
                     return this.processedCategories;
                 },
                 dropDownCats() {
-                    var cats = _.filter(this.processedCategories, function(o) { return o.name != "Dine Filter"; });
+                    var cats = _.filter(this.processedCategories, function(o) { return o.name != "Dine Filter" && o.store_ids != null; });
                     cats = _.map(cats, 'name');
                     cats.unshift('All');
                     return cats;
