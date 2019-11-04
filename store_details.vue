@@ -213,7 +213,7 @@
                     console.log(subcategories)
                     if (_.includes(categories, delivery_category) && !_.isEmpty(subcategories)) {
                         this.deliveryAvailable = true;
-                        if (_.includes(subcategories, 8241)) {
+                        if (_.includes(subcategories, 8250)) {
                             this.hasUberEats = true;
                         }
                         if (_.includes(subcategories, 8246)) {
