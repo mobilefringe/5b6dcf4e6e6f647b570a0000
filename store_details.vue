@@ -160,7 +160,13 @@
                     map: null,
                     storeEvents: null,
                     storePromotions: null,
-                    storeCoupons: null
+                    storeCoupons: null,
+                    deliveryAvailable: false,
+                    hasDoordash: false,
+                    hasGrubhub: false,
+                    hasPostmates: false,
+                    hasRestaurantDelivery: false,
+                    hasUberEats: false
                 }
             },
             props:['id'],
