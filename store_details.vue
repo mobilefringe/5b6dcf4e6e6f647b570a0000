@@ -216,7 +216,6 @@
                     var delivery_category = 8245;
                     var categories = this.currentStore.categories;
                     var subcategories = this.currentStore.subcategories;
-                    console.log(subcategories)
                     if (_.includes(categories, delivery_category) && !_.isEmpty(subcategories)) {
                         this.deliveryAvailable = true;
                         if (_.includes(subcategories, 8250)) {
