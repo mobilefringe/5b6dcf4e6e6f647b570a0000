@@ -219,9 +219,9 @@
                         if (_.includes(subcategories, 8246)) {
                             this.hasDoordash = true;
                         }
-                        // if (_.includes(subcategories, 8247)) {
-                        //     this.hasGrubhub = true;
-                        // }
+                        if (_.includes(subcategories, 8247)) {
+                            this.hasGrubhub = true;
+                        }
                         if (_.includes(subcategories, 8248)) {
                             this.hasPostmates = true;   
                         }
