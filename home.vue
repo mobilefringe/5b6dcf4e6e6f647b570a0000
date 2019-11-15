@@ -170,6 +170,7 @@
                     });
                     
                     this.dataLoaded = true;  
+                    this.meta = this.findMetaDataByPath(this.$route.path);
                 });
             },
             computed: {
