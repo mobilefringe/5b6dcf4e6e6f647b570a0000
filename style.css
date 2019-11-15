@@ -1647,9 +1647,7 @@ input[type=search] {
         display: none;
         // background-color: rgba(49, 55, 113, .8);
         background: $primary;
-        background: #05b0ab;
         transition: all 0.3s ease;
-        
     }
 }
 .store_logo_container:hover {
