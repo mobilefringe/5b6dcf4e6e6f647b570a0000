@@ -327,29 +327,19 @@ a {
         	text-transform: none;
             .dropdown_item {
                 padding: 10px;
-                min-width: 156px;
+                min-width: 136px;
                 font-size: 0.875rem;
                 line-height: normal;
                 color: #FFF;
                 &:hover, &:active, &:focus, &:visited {
-                    color: #000;
-            	    background:#d8be9f;
+            	    background: $secondary;
             	}
-                a {
-                    
-                    &:hover, &:focus {
-                        color: #000;
-                        p {
-                            color: #fff;
-                        }
-                    }
-                }
-                p {
+            	p {
             	    margin: 0;
-            	    &:hover, &:focus {
-                	    color: #000 !important;
-                	}
             	}
+            	a:hover {
+                    color: #FFF;
+                }
             }
         }
     }
