@@ -2092,21 +2092,21 @@ input[type=search] {
         text-align: center;
     }
     .tile {
-	    img {
-	        filter: blur(1px);
-	    }
-	    .details {
-	        color: #FFF;
-	    }
-		&:before {
-			top: 30%;
-			opacity: 1;
-		}
-		.details {
-    		span {
-    			top: 0;
-    			opacity: 1;
-    		}
+        &:focus,
+        &:hover {
+            img {
+                filter: blur(1px);
+            }
+            &:before {
+                top: 0;
+                
+            }
+            &:before, span {
+                opacity: 1;
+            }
+        }
+        .details {
+            padding: 2px;
         }
     }
     .insta-feed-container .insta-feed-image .insta-img {
