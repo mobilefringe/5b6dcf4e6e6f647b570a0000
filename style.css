@@ -696,6 +696,7 @@ a {
                 position: absolute;
                 top: 0;
                 background: $primary;
+                color: #fff;
             }    
         }
     }
