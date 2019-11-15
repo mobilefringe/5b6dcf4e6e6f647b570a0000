@@ -907,7 +907,7 @@ $anim-speed: 0.3s;
 	        filter: blur(2px);
 	    }
 	    .details {
-	        color: #FFF;
+	        color: #000;
 	    }
 		&:before, span {
 			opacity: 1;
