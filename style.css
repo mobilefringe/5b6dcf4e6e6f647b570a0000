@@ -681,7 +681,7 @@ a {
                 left: 10px;
                 font-size: 0.875rem;
                 line-height: normal;
-                color: #FFF;
+                color: #000;
             }
             .insta_icon {
                 position: absolute;
@@ -689,7 +689,7 @@ a {
                 bottom: 10px;
                 font-size: 1.038rem;
                 line-height: normal;
-                color: #FFF;
+                color: #000;
             }
         }
         a:hover {
@@ -700,7 +700,7 @@ a {
                 visibility: visible;
                 position: absolute;
                 top: 0;
-                background: $primary;
+                background: #05b0ab;
             }    
         }
     }
