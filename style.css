@@ -695,7 +695,7 @@ a {
                 visibility: visible;
                 position: absolute;
                 top: 0;
-                background: $secondary;
+                background: $primary;
             }    
         }
     }
