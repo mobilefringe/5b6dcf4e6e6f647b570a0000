@@ -202,7 +202,7 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                         this.$store.dispatch("getData", "hours"), 
                         this.$store.dispatch("getData", "stores")
                     ]);
-                    await Promise.all([this.$store.dispatch("LOAD_META_DATA")]);
+                    await Promise.all([this.$store.dispatch("LOAD_META_DATA_NEW")]);
                     return results;
                 } catch (e) {
                     console.log("Error loading data: " + e.message);    
