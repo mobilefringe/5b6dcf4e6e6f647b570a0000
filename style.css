@@ -330,7 +330,7 @@ a {
                 min-width: 136px;
                 font-size: 0.875rem;
                 line-height: normal;
-                color: #FFF;
+                color: #FFF !important;
                 &:hover, &:active, &:focus, &:visited {
             	    background: $secondary;
             	}
