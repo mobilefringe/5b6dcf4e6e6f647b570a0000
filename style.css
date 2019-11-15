@@ -83,6 +83,11 @@ a {
 [v-cloak] {
     display: none;
 }
+
+.v-select .spinner {
+    font-size: 2rem;    
+}
+
 #app {
     min-height: 100vh;
     display: -webkit-box;
