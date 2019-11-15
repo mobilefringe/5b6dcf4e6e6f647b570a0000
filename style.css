@@ -1649,9 +1649,7 @@ input[type=search] {
         background: $primary;
         background: #05b0ab;
         transition: all 0.3s ease;
-        h4 {
-            color: #000;
-        }
+        
     }
 }
 .store_logo_container:hover {
