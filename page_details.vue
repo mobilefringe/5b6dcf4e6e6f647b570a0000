@@ -38,18 +38,23 @@
                 }
             },
             created() {
-                this.updateCurrentPage(this.id);
-                var temp_repo = this.findRepoByName('Pages Banner');
-                console.log(temp_repo)
-                    if(temp_repo !== null && temp_repo !== undefined && temp_repo.images) {
-                       temp_repo = temp_repo.images;
-                       this.pageBanner = temp_repo[0];
-                    }
-                    else {
+                this.$store.dispatch("getData", "repos").then(response => {
+			        var temp_repo = this.findRepoByName('Pages Banner').images;
+                    if(temp_repo != null) {
+                        this.pageBanner = temp_repo[0];
+                    } else {
                         this.pageBanner = {
                             "image_url": "//codecloud.cdn.speedyrails.net/sites/5dcdc95e6e6f6403ca060000/image/jpeg/1529532304000/insidebanner2.jpg"
                         }
                     }
+			    }, error => {
+					console.error("Could not retrieve data from server. Please check internet connection and try again.");
+				});
+				
+				
+				
+                this.updateCurrentPage(this.id);
+                
             },
             watch: {
                 $route: function () {
