@@ -39,7 +39,7 @@
             },
             created() {
                 this.updateCurrentPage(this.id);
-                var temp_repo = this.findRepoByName('Location Banner');
+                var temp_repo = this.findRepoByName('Pages Banner');
                 console.log(temp_repo)
                     if(temp_repo !== null && temp_repo !== undefined && temp_repo.images) {
                        temp_repo = temp_repo.images;
