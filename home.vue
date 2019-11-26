@@ -70,7 +70,7 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="insta-feed-container">
                                 <div class="insta-feed-image " v-for="(item, index) in instaFeed">
-                                    <a :href="item.link" target="_blank">
+                                    <a :href="item.link" target="_blank" :aria-label="'Go to Instagram post for ' + item.caption.text  ">
                                         <div class="insta-img" v-bind:style="{ 'background-image': 'url(' + item.images.standard_resolution.url + ')' }"></div>
                                         <div class="insta_content">
                                             <p class="insta_caption">{{ item.caption.text }}</p>
