@@ -22,7 +22,7 @@
                 </div>
                 <div class="main_container">
                     <div class="location_map">
-                        <iframe :src="propertyAddress()" width="100%" height="490" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe title="Google maps for East Washington Place" :src="propertyAddress()" width="100%" height="490" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="main_container">
