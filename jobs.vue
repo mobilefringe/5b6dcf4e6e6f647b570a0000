@@ -38,7 +38,7 @@
                                     {{ item.store.name }}
                                 </router-link>        
                             </p>
-                            <h4 class="event_name">{{ item.name }}</h4>
+                            <h2 class="event_name">{{ item.name }}</h2>
                             <p class="event_dates">{{ item.end_date | moment("MMMM D", timezone)}}</p>
                             <div class="event_desc" v-html="item.description_short"></div>
                             <router-link :to="{ name: 'jobDetails', params: { id: item.slug, banner: pageBanner }}">
