@@ -1682,9 +1682,14 @@ input[type=search] {
             letter-spacing: 0.6px;
             text-transform: uppercase;
             text-align: center;
-            h4 {
+            h2 {
                 margin: 0;
                 color: #000;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: 700;
+                font-size: 1.25rem;
+                line-height: normal;
+                color: $primary;
             }
         }
     }
