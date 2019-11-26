@@ -1672,7 +1672,7 @@ input[type=search] {
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             font-size: 0.7rem;
-            color: #FFF;
+            color: #000;
             line-height: normal;
             letter-spacing: 0.6px;
             text-transform: uppercase;
