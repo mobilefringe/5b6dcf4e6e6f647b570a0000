@@ -1091,6 +1091,10 @@ $anim-speed: 0.3s;
     text-align: center;
     text-transform: uppercase;
     color: $primary;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.583rem;
+    line-height: normal;
 }
 .event_container {
     margin-bottom: 75px;
