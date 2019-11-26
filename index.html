@@ -41,7 +41,7 @@
             <div v-if="dataLoaded">
                 <transition-group name="home" tag="div">
                     <header-component :menu_items="menu_items" :social_media="social_media" key="1"></header-component>
-                    <router-view class="page-content" key="2"></router-view>
+                    <router-view class="page-content" key="2" role="main"></router-view>
                     <footer-component :social_media="social_media" key="3"></footer-component>\
                 </transition-group>
             </div>
