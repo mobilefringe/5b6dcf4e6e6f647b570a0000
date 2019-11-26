@@ -1101,6 +1101,11 @@ $anim-speed: 0.3s;
 }
 .event_name {
     margin-top: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: normal;
+    color: $primary;
 }
 .event_store_name {
     font-size: 0.875rem;
