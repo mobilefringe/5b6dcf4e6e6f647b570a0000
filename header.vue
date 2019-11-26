@@ -53,7 +53,7 @@
     							            </router-link>
         							        <div v-else role="tablist">
                                                 <b-card no-body class="mb-1">
-                                                    <b-card-header header-tag="header" class="p-1" role="tab">
+                                                    <b-card-header header-tag="header" class="p-1" >
                                                         <b-btn block href="#" v-b-toggle="$t(item.name)" variant="info">
                                                             {{$t(item.name)}}
                                                             <i v-if="item.show_sub_menu"  class="fas fa-angle-down"></i>
