@@ -16,17 +16,17 @@
                             <form class="newsletter_form form-horizontal" action="//mobilefringe.createsend.com/t/d/s/ejdhrl/" method="post">
                                 <div class="row">
                                     <div class="col-sm-6" >
-                                        <label for="fieldzhtulk" class="accessibility">First Name</label>
+                                        <label for="fieldzhtulk" class="visuallyhidden">First Name</label>
                                         <input v-model="form_data.first_name" required class="margin_20 form-control" id="fieldzhtulk" name="cm-f-zhtulk" type="text" placeholder="First Name">
                                     </div>
                                     <div class="col-sm-6" >
-                                        <label for="fieldzhtulu" class="accessibility">Last Name</label>
+                                        <label for="fieldzhtulu" class="visuallyhidden">Last Name</label>
                                         <input v-model="form_data.last_name" required class="margin_20 form-control" id="fieldzhtulu" name="cm-f-zhtulu" type="text" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <label for="newsletter_email" class="accessibility">Email</label>
+                                        <label for="newsletter_email" class="visuallyhidden">Email</label>
                                         <input v-model="form_data.email" required class="margin_20 form-control" name="cm-ejdhrl-ejdhrl" type="email" placeholder="Email" id="newsletter_email">
                                     </div>
                                 </div>
