@@ -41,31 +41,31 @@
                             <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
                                 <div class="row">
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('name')}">
-                                        <label class="accessibility" for="name">Name</label>
+                                        <label class="visuallyhidden" for="name">Name</label>
                                         <input id="name" v-model="form_data.name" v-validate="'required|alpha_spaces'" class="form-control" :class="{'input': true}" name="name" type="text" data-vv-delay="1000" placeholder="Name *">
                                         <span v-show="errors.has('name')" class="form-control-feedback">{{ errors.first('name') }}</span>
                                     </div>
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('email')}">
-                                        <label class="accessibility" for="email">Email</label>
+                                        <label class="visuallyhidden" for="email">Email</label>
                                         <input id="email" v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000" placeholder="Email *">
                                         <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('phone')}">
-                                        <label class="accessibility" for="phone">Phone</label>
+                                        <label class="visuallyhidden" for="phone">Phone</label>
                                         <input id="phone" v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" data-vv-delay="1000" placeholder="Phone *">
                                         <span v-show="errors.has('phone')" class="form-control-feedback">{{ errors.first('phone') }}</span>
                                     </div>
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('subject')}">
-                                        <label class="accessibility" for="subject">Subject</label>
+                                        <label class="visuallyhidden" for="subject">Subject</label>
                                         <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Subject *">
                                         <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('subject') }}</span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12" :class="{'has-error': errors.has('message')}">
-                                        <label class="accessibility" for="message">Message</label>
+                                        <label class="visuallyhidden" for="message">Message</label>
                                         <textarea id="message" v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" data-vv-delay="1000" placeholder="Message *"></textarea>
                                         <span v-show="errors.has('message')" class="form-control-feedback">{{ errors.first('message') }}</span>
                                     </div>
