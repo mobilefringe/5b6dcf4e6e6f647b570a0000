@@ -19,7 +19,7 @@
                             <div class="col-md-8">
                                 <p v-if="currentJob.jobable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
                                 <p v-else class="event_store_name">{{ currentJob.store.name }}</p>
-                                <h4 class="event_name">{{ currentJob.name }}</h4>
+                                <h2 class="event_name">{{ currentJob.name }}</h2>
                                 <p class="event_dates">
                                     <span v-if="isMultiDay(currentJob)">{{ currentJob.start_date | moment("MMMM D", timezone)}} - {{ currentJob.end_date | moment("MMMM D", timezone)}}</span>
                                     <span v-else>{{ currentJob.start_date | moment("MMMM D", timezone)}}</span>
@@ -36,7 +36,7 @@
                                     <div v-else class="no_logo_container">
                                         <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
                                         <div class="no_logo_text">
-                                            <div class="store_text"><h4>{{ currentJob.store.name }}</h4></div>
+                                            <div class="store_text"><h2>{{ currentJob.store.name }}</h2></div>
                                         </div>
                                     </div>
                                 </div>   
