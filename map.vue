@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + pageBanner.image_url + ') center center rgb(49, 55, 113)' }">
                     <div class="main_container position_relative">
-                        <h2>Center Map</h2>
+                        <h1>Center Map</h1>
                     </div>
                 </div>
                 <div class="main_container">
