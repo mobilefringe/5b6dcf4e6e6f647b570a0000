@@ -741,6 +741,11 @@ a {
         color: #FFF;
         text-align: center;
         text-transform: uppercase;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.8rem;
+        letter-spacing: 2px;
         &:after {
             margin: 0 auto;
             width: 84px;
