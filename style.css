@@ -1363,6 +1363,12 @@ input[type=search] {
 }
 .store_list_title {
     margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.166rem;
+    line-height: normal;
+    color: $primary;
+    letter-spacing: 0;
 }
 .store_list_container {
     max-height: 542px;
