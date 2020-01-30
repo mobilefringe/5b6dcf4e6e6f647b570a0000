@@ -30,19 +30,21 @@
                     <div class="col-md-12">
                         <nav id="primary_nav" role="navigation" aria-label="Main">
     						<ul>
-    						    <li class="menu_item" v-for="item in menu_items" :id="item.id">
+    						    <li class="menu_item" v-for="(item,index) in menu_items" :id="item.id">
     						        <router-link v-if="item.sub_menu == undefined" :to="item.href">{{ item.name }}</router-link>
-    						        <span tabindex=0 v-if="item.sub_menu != undefined">{{ item.name }}</span>
-    						        <ul v-if="item.sub_menu" class="subdropdown">
-    						            <li v-for="sub_menu in item.sub_menu" class="dropdown_item">
-    						                <router-link :to="sub_menu.href">
-						                        <p>{{ sub_menu.name }}</p>
+    						        <span tabindex=0 v-if="item.sub_menu != undefined" @focus="showSubMenu(item.id)" @blur="hideSubMenu()">{{ item.name }}</span>
+    						        <ul v-if="item.sub_menu" :class="['subdropdown', {'show_sub_menu': showSubMenuWithID(item.id)}]">
+    						            <li  v-for="(sub_menu,index) in item.sub_menu" class="dropdown_item">
+    						                <router-link :to="sub_menu.href" tabindex=0 @focus.native="showSubMenu(item.id)" @blur.native="hideSubMenu()" 
+    						                @click.native="hideSubMenu()">
+						                        {{ sub_menu.name }}
 					                        </router-link>
     						            </li>
     								</ul>
     						    </li>
     						</ul>
     					</nav>
+    					
     					<div class="nav_container visible_phone">
     					    <transition name="custom-classes-transition" enter-active-class="animated slideInRight" leave-active-class="animated slideOutRight">
         					    <nav id="mobile_nav" v-show="showMenu" role="navigation" aria-label="Mobile">
@@ -99,6 +101,8 @@
                 return {
                     showMenu: false,
                     showMobileMenu: false,
+                    showSubMenuItem: false,
+                    subMenuID: "",
                     noScroll: false,
                     windowWidth: 0,
                     scrollY: false,
@@ -164,6 +168,20 @@
                 changeLocale: function(val) {
                     // this will update the data store, which in turn will trigger the watcher to update the locale in the system
                     this.locale = val; 
+                },
+                showSubMenu: function(id) {
+                    this.showSubMenuItem = true;
+                    this.subMenuID = id;
+                },
+                hideSubMenu: function() {
+                    this.showSubMenuItem = false;
+                },
+                showSubMenuWithID: function(id) {
+                  if(this.subMenuID === id && this.showSubMenuItem) {
+                      return true;
+                  } else {
+                      return false;
+                  }  
                 },
                 handleScroll(event) {
                     var scrolled = window.pageYOffset;
