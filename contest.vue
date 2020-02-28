@@ -21,7 +21,7 @@
                     </div> 
                     <div class="row"> 
                         <div class="col-md-8 col-md-offset-2">
-    						<h3 v-if="currentContest.name" class="contest_title">{{currentContest.name}}</h3>
+    						<h2 v-if="currentContest.name" class="contest_title">{{currentContest.name}}</h2>
                             <div v-if="currentContest.rich_description" class="contest_desc" v-html="currentContest.rich_description"></div>
                             <transition name="fade">
                                 <div>
