@@ -189,26 +189,41 @@
                     'findMetaDataByPath'
                 ]),
                 homeBanners() {
+                    var banner_list = this.$store.state.banners;
                     var banners = [];
-                    _.forEach(this.$store.state.banners, function (value, key) {
-                        var today = new Date();
-                        var start = new Date (value.start_date);
-                        if (start <= today){
-                            if (value.end_date){
-                                var end = new Date (value.end_date);
-                                if (end >= today){
-                                    banners.push(value);  
-                                }
+                    _.forEach(banner_list, function (value, key) {
+                        if (value.start_date != null || value.end_date != null) {
+                            var today = moment.tz(this.timezone).format("X");
+                            var start = "";
+                            if (value.start_date) {
+                                //manually add 12:00am as start time to start date
+                                var start_val = moment(value.start_date).hour('12').minute('00')
+                                start = moment(start_val).format("X");
                             } else {
-                                banners.push(value);
+                                start = today;
                             }
                             
-                            if (value.cms_fields.subheader) {
-                                value.heading = value.cms_fields.subheader;
+                            if (start <= today) {
+                                if (value.end_date) {
+                                    //manually add 11:50pm as end time to end date
+                                    var end_val =moment(value.end_date).hour('23').minute('59')
+                                    var end = moment(end_val).format("X");
+                                    if (end > today){
+                                        banners.push(value);  
+                                    }
+                                } else {
+                                    banners.push(value);
+                                }
                             }
+                        } else {
+                            banners.push(value);
+                        }
+                        
+                        if (value.cms_fields.subheader) {
+                            value.heading = value.cms_fields.subheader;
                         }
                     });
-                    banners = _.orderBy(banners, function(o) { return o.position });
+                    banners = _.orderBy(banners, function(o) {return o.position });
                     return banners
                 },
                 featuredItems() {
