@@ -297,7 +297,7 @@
             methods: {
                 loadData: async function() {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData", "events"), this.$store.dispatch('LOAD_PAGE_DATA', {url: "https://eastwashington.mallmaverickstaging.com/api/v4/eastwashington/social.json"})]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData", "events"), this.$store.dispatch('LOAD_PAGE_DATA', {url: "https://eastwashington.mallmaverick.com/api/v4/eastwashington/social.json"})]);
                         // Add in for Instagram Feed
                         // this.$store.dispatch('LOAD_PAGE_DATA', {url: "https://eastwashington.mallmaverick.com/api/v4/eastwashington/social.json"})
                         return results;
