@@ -1651,20 +1651,30 @@ input[type=search] {
     }
     .store_tag {
         position: absolute;
-        top: 20px;
         right: -1px;
-        height: 23px;
         background-color: $primary;
         .store_tag_text {
-            padding: 4px 0;
-            width: 108px;
-            font-size: 0.75rem;
+            padding: 3px 6px;
+            max-width: 108px;
+            font-size: 0.6875rem;
             color: #FFF;
             line-height: normal;
             letter-spacing: 0.6px;
             text-transform: uppercase;
             text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
+    }
+    .store_tag:first-child {
+        top: 2px;
+    }
+    .store_tag:nth-child(2) {
+        top: 25px;
+    }
+    .store_tag:nth-child(3) {
+        top: 48px;
     }
     .store_phone {
         display: none;
