@@ -194,6 +194,33 @@
                         } else {
                             value.no_store_logo = false;
                         }
+                        
+                        // Create list of custom store tags
+                        var flags = [];
+                        if (value.tags) {
+                            var store_tags = value.tags;
+                            _.forEach(store_tags, function(tag, key) {
+                                flags.push(tag);
+                            });
+                        }
+                        if (value.is_new_store) {
+                            flags.push("New");
+                        } else if (value.is_coming_soon_store) {
+                            flags.push("Coming Soon");
+                        } else if (value.is_relocated_store) {
+                            flags.push("Relocated");
+                        } else if (value.total_published_promos) {
+                            flags.push("Promotion");
+                        } else if (value.total_published_events) {
+                            flags.push("Event");
+                        } else if (value.total_published_jobs) {
+                            flags.push("Job");
+                        }
+                        if (flags.length > 3) {
+                            flags = _.slice(flags, 0, 3);
+                        }
+                        value.store_flags = flags;
+                            
                         store_list.push(value);
                     });
                     this.filteredStores = store_list;
